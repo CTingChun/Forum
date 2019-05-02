@@ -1,0 +1,117 @@
+<!doctype html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+        <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+        <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+        <title>Forum Topic</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+        <link href="index_test.css" rel="stylesheet">
+
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase-database.js"></script>
+        <script src="config.js"></script>
+        <script src="index_test.js"></script>
+    </head>
+    <body class="back">
+
+        <nav class="navbar navbar-expand-md fixed-top navbar-light ">
+            <a class="navbar-brand" href="#">Forum by Ting Chun</a>
+            <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                     <li class="nav-item dropdown " style="float:right">
+                        <a class="nav-link dropdown-toggle w3-right wanttoberight" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  onclick='test()'>Account</a>
+                        <div id="dynamic-menu" class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item" style="float:right" href="index.html">Login</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <main role="main" class="container">
+            <br><br><br><br>
+                
+            <h2>Choose a topic!</h2>
+                <!-- <div class="item tm1">
+                    <img src="https://myproblog.com/wp-content/uploads/2019/04/beautyoutlet-1600x1600.jpg">
+                    <p>Beauty</p>
+                </div>
+
+
+                <div class="item tm2">
+                    <img src="https://t.scdn.co/media/original/mood-274x274_976986a31ac8c49794cbdc7246fd5ad7_274x274.jpg">
+                    <p>Mood</p>
+                </div>
+
+                <div class="item tm3">
+                    <img src="https://img.mymusic.net.tw/mms/album/L/879/589879.jpg">
+                    <p>Girl</p>
+                </div>
+
+                <div class="item tm4">
+                    <img src="https://media1.popsugar-assets.com/files/thumbor/PZoN3izOwT1ibskqv9jAgDrWMaQ/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/04/07/869/n/1922564/13c3dfd658e7eded8cc307.25763926_edit_img_image_35887230_1430305200/i/How-Wear-Dress-Sneakers.jpg">
+                    <p>Wear</p>
+                </div> -->
+                <br>
+                <span>
+                    <div class="item tm5">
+                        <a href="beauty.html"><img src="https://myproblog.com/wp-content/uploads/2019/04/beautyoutlet-1600x1600.jpg"></a>
+                        <p>Beauty</p>
+                    </div>
+
+                    <div class="item tm6">
+                        <a href="mood.html"><img src="https://t.scdn.co/media/original/mood-274x274_976986a31ac8c49794cbdc7246fd5ad7_274x274.jpg"></a>
+                        <p>Mood</p>
+                    </div>
+
+                    <div class="item tm7">
+                        <a href="movie.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRevJzea2T2ql-SSUUGlBtm8rgmJVyi4Wn6IYxH7c532Lkzbycy"></a>
+                        <p>Movies</p>
+                    </div>
+            <span>
+            <br>
+                <!-- <div class="item tm8">
+                    <img src="https://www.rd.com/wp-content/uploads/2017/09/10_chinese_Common-Food-Myths-Thatare-Wildly-Untrue_326117627-Alphonsine-Sabine-1200x1200.jpg">
+                    <p>Food</p>
+                </div>
+
+
+                <div class="item tm2">
+                    <img src="https://pixel.nymag.com/imgs/daily/vulture/2017/07/07/07-superhero-movies-ranked.w700.h700.jpg">
+                <p>Movies</p>
+                </div>
+
+                    <div class="item tm3">
+                        <img src="https://content.halocdn.com/media/Default/games/halo-reach/page/game_overview_thumbnail_haloreach-a3965b3d3ed648ad9e1d28d365dee445.jpg">
+                <p>Game</p>
+                </div>
+
+                <div class="item tm4">
+                    <img src="http://theholisticexperience.co/wp-content/uploads/2019/04/girls-running-pants-women-pant-gym-long-yoga-sports-trousers-skinny-sexy-fitness-tight-leggings-from-home-improvement-license-suffolk-county.jpg">
+                <p>Sports</p>
+                </div> -->
+                </div>
+            </div>
+        </main>
+        <!-- <script src="offcanvas.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+    </body>
+
+</html>
