@@ -44,6 +44,12 @@
     > 進入看板後，可以看到自己或是其他人的post。
 4. Leave comment under any post : 
     > 點擊post list page的post title即可進入post，並且可以讀到post的內容，也可以在下面留言。
+5. Sign up with Google : 
+    > 使用lab_06所學，利用**third-party** (ex:google)登入，並進入到選擇看板的畫面。
+6. Add Chrome Notification : 
+    > 先加了一個btn，讓我們點下他可以allow Chrome notification，之後只要在Beauty板新增了post，便會出現通知。
+7. CSS Animation : 
+    > 在**index.html** (for signin) 的檔案裡讓背景有一些不規則的小方塊移動，看起來很有質感。然後在**index_test.html** (for choosing board) 也增加了一些動畫，滑鼠游標移到看板上時，圖片會旋轉放大。此外，在每個看板中，他們的title以及post都會以漸進的方式進入畫面。以上是我使用的animation。
 
 # Other Functions Description(1~10%) : 
 1. Delete post : 
