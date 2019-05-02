@@ -78,52 +78,37 @@ function init() {
         })
         .catch(e => console.log(e.message));
 
-        var isNotify=-1;
-        var flag=0;
-
-        var notification=document.getElementById('notification');
-        notification.addEventListener('click', function(e){
-            e.preventDefault();
-            isNotify=1;
+        document.getElementById('notification').addEventListener('click', function(e){
             if(!window.Notification){
                 console.log('Not supported');
             }else{
                 Notification.requestPermission().then(function(p){
-                    if(p=='denied'){
+                    if(p === 'denied'){
                         console.log('You denied to show notification');
                     }
-                    else if(p=='granted'){
+                    else if(p === 'granted'){
                         console.log('You allowed to show notification');
                     }
                 })
             }
         })
 
-        if(flag == 0){
-            flag = 1;
-        }else{
-            var b=firebase.database().ref('beauty_list');
-            b.on('child_added', function(data){
-                if(isNotify){
-                    isNotify=-1;
-                    if(Notification.permission!='default'){
-                        var notify;
-                        notify=new Notification('New topic from Beauty', {
-                            'User: ':data.val().email,
-                            'shares: ':data.val().title,
-                            'says: ':data.val().data
-                        })
-                        
-                        notify.onclick=function(){
-                            console.log('onclick');
-                        }
-                    }
-                    else{
-                        console.log('Please allow the notification first');
+        let isInitial = true;
+        firebase.database().ref('beauty_list').on('value', function(data){
+            if (!isInitial) {
+                if(Notification.permission === 'granted'){
+                    new Notification('New topic from Beauty');
+                    
+                    notify.onclick=function(){
+                        console.log('onclick');
                     }
                 }
-            });
-        }
+                else{
+                    console.log('Please allow the notification first');
+                }
+            }
+            isInitial = false;
+        })
 }
 
 window.onload = function () {
